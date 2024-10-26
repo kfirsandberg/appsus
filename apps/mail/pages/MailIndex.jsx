@@ -8,7 +8,7 @@ const { useState, useEffect } = React
 export function MailIndex() {
     const [mails, setMails] = useState([])
     const [filter, setFilter] = useState({ date: true, read: 'all' })
-    
+
     useEffect(() => {
         loadMails()
     }, [filter,])
@@ -28,9 +28,12 @@ export function MailIndex() {
     return (
         <section className="inbox">
             <MailNav />
-            <section className="mail-container">
+            <section className="mail-container flex column ">
                 <MailFilter filter={filter} onFilterChange={handleFilterChange} />
                 <MailList mails={mails} onMailRemove={loadMails} />
+                <div className="footer">
+                    <span className="flex justify-center">{`You have ${mails.length} mails`}</span>
+                </div>
             </section>
         </section>
     )

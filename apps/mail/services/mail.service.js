@@ -80,7 +80,70 @@ function _createMails() {
                 removedAt: null,
                 from: 'nono@nono.com',
                 to: 'user@appsus.com'
+            }, {
+                id: 'e105',
+                subject: 'We are going to have the best project!',
+                body: 'Eden and Noam are going to have the best project',
+                isRead: true,
+                sentAt: 1701332778460,
+                removedAt: null,
+                isStarred: false,
+                from: 'kiki@momo.com',
+                to: 'user@appsus.com'
+            }, {
+                id: 'e108',
+                subject: 'Need you help!',
+                body: utilService.makeLorem(300),
+                isRead: true,
+                sentAt: 1551133830594,
+                removedAt: null,
+                isStarred: false,
+                from: 'koko@momo.com',
+                to: 'user@appsus.com'
+            }, {
+                id: 'e109',
+                subject: 'We Rock!',
+                body: 'Would love to catch up sometimes',
+                isRead: false,
+                sentAt: 1651332778460,
+                removedAt: null,
+                isStarred: false,
+                from: 'nono@momo.com',
+                to: 'user@appsus.com'
+            }, {
+                id: 'e115',
+                subject: 'We are going to have the best project!',
+                body: 'Eden and Noam are going to have the best project Eden and Noam are going to have the best project',
+                isRead: true,
+                sentAt: 1531133230594,
+                removedAt: null,
+                isStarred: false,
+                from: 'kiki@momo.com',
+                to: 'user@appsus.com'
+            },
+            {
+                id: 'e116',
+                subject: 'We are going to have the best project!',
+                body: 'Eden and Noam are going to have the best project Eden and Noam are going to have the best project',
+                isRead: true,
+                sentAt: 1531133230594,
+                removedAt: null,
+                isStarred: false,
+                from: 'user@appsus.com',
+                to: 'service@momo.com'
+            },
+            {
+                id: 'e119s',
+                subject: 'We are going to have the best project!',
+                body: 'Eden and Noam are going to have the best project',
+                isRead: true,
+                sentAt: 1521133930594,
+                removedAt: null,
+                isStarred: false,
+                from: 'user@appsus.com',
+                to: 'kiki@koko.com'
             }
+
         ]
         storageService.saveToStorage(MAIL_KEY, mails)
     }

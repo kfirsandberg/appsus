@@ -1,0 +1,41 @@
+/* Mail Filter Container */
+.mail-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Filter Dropdown */
+.filter-select {
+    padding: 8px;
+    font-size: 14px;
+    color: #5f6368;
+    background-color: #f1f3f4;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.filter-select:hover {
+    background-color: #e8eaed;
+}
+
+/* Filter Button */
+.filter-button {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #1a73e8;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.filter-button:hover {
+    background-color: #e8f0fe;
+}

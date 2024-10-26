@@ -21,3 +21,8 @@ img {
     max-width: 100%;
     object-fit: cover;
 }
+
+.btn:hover {
+    background-color: #3c40431e;
+    border-radius: 1000px;
+}

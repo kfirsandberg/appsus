@@ -15,7 +15,6 @@ export function App() {
                 <Route path="/inbox" element={<MailIndex />} />
                 <Route path="/" element={<MailIndex />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/trash" element={<Trash />} />
                 <Route path="/mail/:mailId" element={<MailDetails />} />
             </Routes>
         </section>

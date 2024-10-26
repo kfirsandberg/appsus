@@ -12,6 +12,7 @@
 /* Pages */
 @import './pages/home.css';
 @import './pages/mainMailApp.css';
+@import './pages/about.css';
 
 /* @import './apps/note/pages/NoteIndex.css'; */
 
@@ -20,7 +21,10 @@
 /* Cmps */
 
 @import './cmps/UserMsg.css';
+@import './cmps/mailDetails.css';
 @import './cmps/AppHeader.css';
 @import './cmps/inbox.css';
+@import './cmps/inboxNav.css';
+@import './cmps/inboxFilter.css';
 
 /* @import './apps/mail/cmps/MailList.css'; */

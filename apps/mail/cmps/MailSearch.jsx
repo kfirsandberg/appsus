@@ -1,22 +1,20 @@
-
 const { useState, useEffect } = React
 
-export function MailSearch() {
-
+export function MailSearch({ filterBy, onSetSearchFilter }) {
     function handleChange({ target }) {
-        let value = target.value
-        console.log(value)
-
+        const value = target.value
+        onSetSearchFilter(value)
     }
+
     return (
-        <section className="mail-filter grid column align-center">
+        <section className="mail-search">
             <input
                 type="search"
                 name="search"
                 id="search"
                 placeholder="Search mail"
                 onChange={handleChange}
-
+                className="search-input"
             />
         </section>
     )

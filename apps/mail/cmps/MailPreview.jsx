@@ -1,55 +1,44 @@
-import { utilService } from '../../../services/util.service.js'
-import { mailService } from '../services/mail.service.js'
-
-const { useState, useEffect } = React
+import { utilService } from '../../../services/util.service.js';
+import { mailService } from '../services/mail.service.js';
+const { useState } = React;
 
 export function MailPreview({ mail, onMailClick, onMailRemove }) {
-    const [isHovered, setIsHovered] = useState(false)
-    const isRead = mail.isRead
-    let displayedContent = ''
-    let read
-    const handleMouseEnter = () => {
-        setIsHovered(true)
-    }
+    const [isHovered, setIsHovered] = useState(false);
+    const isRead = mail.isRead;
+    const boldClass = isRead ? '' : 'bold';
+    const readClass = isRead ? 'read' : 'unread';
 
-    const handleMouseLeave = () => {
-        setIsHovered(false)
-    }
-    function onRemove(e) {
-        e.stopPropagation()
+    const handleMouseEnter = () => setIsHovered(true);
+    const handleMouseLeave = () => setIsHovered(false);
+
+    const onRemove = (e) => {
+        e.stopPropagation();
         mailService.removeMail(mail.id)
             .then(() => onMailRemove())
-            .catch(err => console.error('Failed to remove mail:', err))
-    }
-    if (isHovered) {
-        displayedContent = (
-            <div className="actions-container flex align-center">
-                <button onClick={onRemove}>remove </button>
-                {isRead &&
-                    <button > read</button>
-                }
-                {!isRead &&
-                    <button > unRead</button>
-                }
-            </div>
-        )
-    } else {
-        displayedContent = <span className="mail-sentAt">{utilService.getTimeFromStamp(mail.sentAt)}</span>
-    }
-    if (isRead) read = 'read'
+            .catch(err => console.error('Failed to remove mail:', err));
+    };
+
+    const truncateText = (text, maxLength = 60) => (
+        text.length > maxLength ? text.slice(0, maxLength) + '...' : text
+    );
 
     return (
-        <article className={`grid mail-preview ${read}`}
+        <tr className={`mail-preview ${readClass}`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={() => onMailClick(mail)}>
-            <span>{mail.from}</span>
-            <section className="mail-content flex center">
-                <p>{mail.subject}</p>
-                <p>{mail.body}</p>
-            </section>
-            <span className={`mail-sentAt`}>{displayedContent}</span>
-
-        </article>
-    )
+            <td><span className={boldClass}>{mail.from}</span></td>
+            <td><span className={boldClass}>{mail.subject}</span></td>
+            <td><span>{truncateText(mail.body)}</span></td>
+            <td className={`mail-sentAt ${boldClass}`}>
+                {isHovered ? (
+                    <div className="actions-container flex align-center">
+                        <button className="action-btn remove-btn" onClick={onRemove}>Remove</button>
+                    </div>
+                ) : (
+                    <span>{utilService.getTimeFromStamp(mail.sentAt)}</span>
+                )}
+            </td>
+        </tr>
+    );
 }

@@ -6,13 +6,17 @@ export function MailNav() {
     const handleNavigate = (path) => {
         navigate(path)
     }
+
     return (
-        <section>
-            <button>Compose</button>
+        <section className="inbox-nav">
+            <button className="compose-button"><i className="fa-solid fa-pen"></i></button>
             <nav className="mail-box-nav">
-                <li onClick={() => handleNavigate('/inbox')}>Inbox</li>
-                <li onClick={() => handleNavigate('/sent')}>Sent</li>
-                <li onClick={() => handleNavigate('/trash')}>Trash</li>
+                <ul>
+
+                    <li onClick={() => handleNavigate('/inbox')}><i className="fa-solid fa-inbox"></i>
+                    </li>
+                    <li onClick={() => handleNavigate('/trash')}><i className="fa-solid fa-trash"></i></li>
+                </ul>
             </nav>
         </section>
     )

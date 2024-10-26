@@ -1,0 +1,49 @@
+/* Main sidebar container */
+.inbox-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 250px;
+    background-color: #f1f3f4;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+    height: 100vh;
+}
+
+/* Compose Button */
+.compose-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #1a73e8;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.compose-button:hover {
+    background-color: #1559c1;
+}
+
+/* Navigation Links */
+.mail-box-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mail-box-nav li {
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #5f6368;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.mail-box-nav li:hover {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+}
