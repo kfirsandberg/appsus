@@ -1,0 +1,32 @@
+header {
+    border-bottom: 2px solid white;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    height: 2em;
+}
+
+nav a {
+    margin: .5em;
+}
+
+nav a:active {
+    color: purple;
+}
+
+nav a.active {
+    color: darkblue;
+    font-weight: bold;
+    text-decoration: overline;
+}
+
+.menu-btn{
+    height: 100%;
+    max-width: 100%;
+}
+.mail-box-nav li {
+    cursor: pointer;
+}

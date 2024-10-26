@@ -1,0 +1,6 @@
+.app{
+    display: grid;
+    grid-column: 1fr auto;
+    padding: 1em;
+    background-color: #f6f8fc;
+}

@@ -1,0 +1,44 @@
+.inbox {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: max-content 1fr ;
+    padding: 1em;
+}
+
+.filter {
+    align-items: center;
+}
+
+.mail-container {
+
+    background-color: #fff;
+}
+
+.mail-preview {
+    grid-template-columns: auto 200px 1fr minmax(85px, auto);
+    align-items: center;
+    cursor: pointer;
+    box-shadow: rgba(100, 121, 143, 0.12) 0px -1px 0px 0px inset;
+    background-color: #ffffff;
+}
+
+.mail-content {
+    min-width: 230px;
+    gap: 5px;
+}
+
+.mail-sentAt {
+
+    justify-self: end;
+    padding-inline-end: 20px;
+}
+
+
+button {
+    all: unset;
+    cursor: pointer;
+    text-align: center;
+}
+.read{
+    background-color: #f2f6fc;
+}
